@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style-common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style-2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="bgImg">
+        <img src="pics/bg.webp" alt="" >
+        <img src="pics/bg.webp" alt="" >
+        </div>
+    <section class="nav">
+        <div class="logo">
+            <img src="pics/logo.png" alt="">
+            Healthify
+        </div>
+        <a href="/macros"><p id="macros">Macros Calculator</p></a>
+    <a href="/bmi"><p id="bmi">BMI Calculator</p></a>
+
+    <div class="footer">
+        <img src="pics/logo.png" alt="">
+    </div>
+     </section>
+
+     <section class="main">
+        <p class="header">Get Your BMI</p>
+    <p class="info">Let's check where you stand in the BMI chart!!</p>
+    <div class="section" id="about-bmi">
+        BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range the value falls between.
+     </div>
+     <div class="section" id="gender">
+        I am,
+        <div class="btn">
+            <button id="male" onclick="gender(document.getElementById('male'))">Male</button>
+            <button id="female" onclick="gender(document.getElementById('female'))">Female</button>
+        </div>
+    </div>
+    <form action="/bmi" method="post">
+        <div class="section" >
+            I am <span id="ageValue"></span> years old <input type="text" placeholder="enter your age" id="age" value="" oninput="fillText(document.querySelector('#age'), document.querySelector('#ageValue'))">
+        </div>
+        <div class="section" >
+            I am <span id="heightValue"></span>cm tall <input type="text" placeholder="enter your height(in cms)" id="height" oninput="fillText(document.querySelector('#height'), document.querySelector('#heightValue'))">
+        </div>
+        <div class="section" >
+            I weigh <span id="weightValue"></span>kg <input type="text" placeholder="enter your weight(in Kgs)" id="weight" oninput="fillText(document.querySelector('#weight'), document.querySelector('#weightValue'))">
+        </div>
+        <div class="calc">
+            <input type="submit" class="final-btn" value="Calculate BMI">
+        </div>
+    </form>
+        </section>
+
+ 
+        <section class="results">
+            <p class="header">Your  BMI!</p>
+            <div id="kcal">
+                <p class="num">{{BMI}}</p>
+            </div>
+         </section>
+</body>
+<script src="script.js"></script>
+</html>

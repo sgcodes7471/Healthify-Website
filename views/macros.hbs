@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style-common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style-1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <section class="nav">
+    <div class="logo">
+        <img src="pics/logo.png" alt="">
+        Healthify
+    </div>
+    <a href="/macros"><p id="macros">Macros Calculator</p></a>
+    <a href="/bmi"><p id="bmi">BMI Calculator</p></a>
+
+<div class="footer">
+    <img src="pics/logo.png" alt="">
+</div>
+ </section>
+
+ <div class="bgImg">
+    <img src="pics/bg.webp" alt="" >
+    <img src="pics/bg.webp" alt="">
+    </div>
+
+    
+ <section class="main">
+    <p class="header">Calculate your Macros</p>
+    <p class="info">Craft your macronutrients in seconds!!</p>
+
+    <div class="section" id="gender">
+        I am,
+        <div class="btn">
+            <button id="male" onclick="gender(document.getElementById('male'))">Male</button>
+            <button id="female" onclick="gender(document.getElementById('female'))">Female</button>
+        </div>
+    </div>
+
+    <div class="section" id="goal">
+        My main goal is,
+        <div class="btn">
+            <button id="lose" onclick="goal(document.getElementById('lose'))" >Lose</button>
+            <button id="maintain"  onclick="goal(document.getElementById('maintain'))">Maintain</button>
+            <button id="gain" onclick="goal(document.getElementById('gain'))">Gain</button>
+        </div>
+    </div>
+    <div class="section" id="action">
+        I am currently involved in,
+        <div class="btn">
+            <button id="sedentary" onclick="action(document.getElementById('sedentary'))">Sedentary <br> <span class="info">(no exercise)</span></button>
+            <button id="fairly" onclick="action(document.getElementById('fairly'))">Fairly Active  <br><span class="info">(Jogging, Stretching etc.)</span></button>
+            <button id="active" onclick="action(document.getElementById('active'))">Highly Active <br><span class="info">(Sports, Gym)</span></button>
+        </div>
+    </div>
+    <form action="/macros" method="post">
+    <div class="section" >
+        I am <span id="ageValue">...</span> years old <input type="text" name="age" placeholder="enter your age" id="age" value="" oninput="fillText(document.querySelector('#age'), document.querySelector('#ageValue'))">
+    </div>
+    <div class="section" >
+        I am <span id="heightValue">...</span>cm tall <input type="text" name="height" placeholder="enter your height(in cms)" id="height" oninput="fillText(document.querySelector('#height'), document.querySelector('#heightValue'))">
+    </div>
+    <div class="section" >
+        I weigh <span id="weightValue">...</span>kg <input type="text" name="weight" placeholder="enter your weight(in Kgs)" id="weight" oninput="fillText(document.querySelector('#weight'), document.querySelector('#weightValue'))">
+    </div>
+    
+    <div class="calc">
+        <input type="submit" class="final-btn" value="Calculate Macros">
+    </div>
+    </form>
+ </section>
+
+ <section class="results">
+    <p class="header">Your Daily MacroGoals!</p>
+    <div id="kcal">
+        <p class="num" id="kcalnum">{{calories}}</p>
+        <p>kcal</p>
+    </div>
+    <div id="pcf">
+        <p class="cards">Protien  <br><img src="pics/1.jpeg" alt=""> <br><span class="num" id="protien">{{protien}}</span></p> 
+        <p class="cards">Carbs <br><img src="pics/1.jpeg" alt=""> <br><span class="num" id="carbs">{{carbs}}</span></p>
+        <p class="cards">Fats <br><img src="pics/1.jpeg" alt=""> <br><span class="num" id="fats">{{fats}}</span></p>
+    </div>
+ </section>
+</body>
+<script src="script.js"></script>
+</html>

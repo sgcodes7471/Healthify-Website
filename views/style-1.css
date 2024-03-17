@@ -1,0 +1,22 @@
+#macros{
+    background-color: pink;
+    border-left: 5px solid rgb(255, 134, 175);
+}
+
+#pcf{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    color: rgb(41, 41, 153);
+}
+.cards{
+    border: 2px solid rgb(41, 41, 153);
+    border-radius: 20px;
+    width: 100px;
+    height: 150px;
+    margin: 5px 5px 5px 5px ;
+    padding: 5px 5px 5px 5px;
+}
+.cards img{
+    width: 50px;
+}
